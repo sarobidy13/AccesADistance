@@ -103,6 +103,7 @@ public class Listener implements MouseListener, KeyListener, MouseMotionListener
             os.writeInt(3);
             os.writeUTF(e.getX() + "//" + e.getY());
             os.flush();
+            
         } catch (IOException ex) {
             ex.printStackTrace();
         }

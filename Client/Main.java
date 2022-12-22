@@ -6,11 +6,14 @@ import java.io.IOException;
 import java.net.Socket;
 import sendsary.SendSary;
 import execution.Execution;
+import javax.swing.JOptionPane;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket("127.0.0.1", 3204);
-        System.out.println("Connexion etablie");
+
+        String ip = JOptionPane.showInputDialog("Entrer l'adresse ip du serveur");
+        Socket socket = new Socket(ip, 5000);
+        System.out.println("Connection etablie au server " + ip);
 
         DataInputStream dis = new DataInputStream(socket.getInputStream());
         DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
